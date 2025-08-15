@@ -64,7 +64,7 @@
 ## 编译工作空间
 1. 将仓库克隆到ROS工作空间的`src`目录
    ```bash
-  cd ~/catkin_ws
-  catkin_make
-  source devel/setup.bash
+   cd ~/catkin_ws
+   catkin_make
+   source devel/setup.bash
 
