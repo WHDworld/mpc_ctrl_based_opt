@@ -10,7 +10,7 @@
   - 包含 `JPCM_node` 主节点，负责控制逻辑执行
   - 集成 GTSAM 库进行状态估计与优化（包含因子定义、边缘化等模块）
   - 提供 `FakeGPS_IMU_fusion_node` 用于传感器数据融合测试
-  - 支持推力校准脚本（{insert\_element\_0\_YHRocnVzdF9jYWxpYnJhdGUucHlg}）及轨迹测试脚本（{insert\_element\_1\_YGZpeGVkX3BvaW50X2FuZF9jaXJjbGVfdGVzdC5weWA=}）
+  - 支持轨迹测试脚本（{insert\_element\_1\_YGZpeGVkX3BvaW50X2FuZF9jaXJjbGVfdGVzdC5weWA=}）
 
 ### 2. 工具类模块
 - **cmake_utils**：提供CMake工具函数，避免多包重复编写配置文件，简化构建流程
@@ -60,3 +60,22 @@
    ```bash
    cd ~/catkin_ws/src
    git clone <仓库地址>
+   
+## 编译工作空间
+1. 将仓库克隆到ROS工作空间的`src`目录
+   ```bash
+  cd ~/catkin_ws
+  # 安装项目依赖的系统包（若有）
+  rosdep install --from-paths src --ignore-src -r -y
+  # 编译整个工作空间
+  catkin_make
+  # 若需指定编译类型（如Debug）
+  catkin_make -DCMAKE_BUILD_TYPE=Debug
+  # 编译完成后加载环境变量
+  source devel/setup.bash
+  # 若使用zsh终端
+  source devel/setup.zsh
+  # 可选：将环境变量永久添加到终端配置文件
+  echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+  # 刷新配置
+  source ~/.bashrc
