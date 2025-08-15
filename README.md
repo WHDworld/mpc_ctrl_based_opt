@@ -59,3 +59,20 @@
    attitude_target_topic: /mavros/setpoint_raw/attitude
    position_target_topic: /mavros/setpoint_raw/local
    save_path: ~/experiment/mpc_ctrl_ws/src/mpc_ctrl/scripts/mpc_tracking_data.csv
+2. ctrl_param_fpv.yaml主要负责控制器参数
+   ```bash
+   mass: 1.8065 # kg
+   gra: 9.81
+   pose_solver: 1 # 0:From ZhepeiWang (drag & less singular) 1:From ZhepeiWang, 2:From rotor-drag
+   ctrl_freq_max: 100.0
+   use_bodyrate_ctrl: true
+   max_manual_vel: 1.0
+   max_angle: 80 # Attitude angle limit in degree. A negative value means no limit.
+   low_voltage: 13.2 # 4S battery
+   odom_freq: 100
+   ctrl_mode: 2 # DFBC 1 MPC 2 JPCM 3
+
+   odom_topic: /mavros/local_position/odom
+   imu_topic: /mavros/imu/data
+   target_topic: /planning/pos_cmd
+   attitude_target_topic: /mavros/setpoint_raw/attitude
