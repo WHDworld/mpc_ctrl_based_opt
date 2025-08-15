@@ -5,13 +5,13 @@
 
 ## 核心功能模块
 
-### 1. 控制核心模块
+### 控制核心模块
 - **mpc_ctrl**：项目核心功能包，实现模型预测控制相关算法
   - 包含 `JPCM_node` 主节点，负责控制逻辑执行
   - 集成 GTSAM 库进行状态估计与优化（包含因子定义、边缘化等模块）
   - 支持轨迹测试脚本（{insert\_element\_1\_YGZpeGVkX3BvaW50X2FuZF9jaXJjbGVfdGVzdC5weWA=}）
 
-## 2. 系统依赖
+## 系统依赖
 - 操作系统：Linux（兼容ROS支持的发行版）
 - 核心框架：ROS（支持Indigo等版本）
 - 构建系统：catkin
