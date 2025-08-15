@@ -65,17 +65,6 @@
 1. 将仓库克隆到ROS工作空间的`src`目录
    ```bash
   cd ~/catkin_ws
-  # 安装项目依赖的系统包（若有）
-  rosdep install --from-paths src --ignore-src -r -y
-  # 编译整个工作空间
   catkin_make
-  # 若需指定编译类型（如Debug）
-  catkin_make -DCMAKE_BUILD_TYPE=Debug
-  # 编译完成后加载环境变量
   source devel/setup.bash
-  # 若使用zsh终端
-  source devel/setup.zsh
-  # 可选：将环境变量永久添加到终端配置文件
-  echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-  # 刷新配置
-  source ~/.bashrc
+
