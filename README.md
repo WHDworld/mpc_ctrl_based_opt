@@ -47,3 +47,15 @@
    ```bash
    python3 ~/catkin_ws/src/your_pkg/mpc_ctrl/scripts/controller_vis.py  # 轨迹跟踪结果分析可视化
    python3 ~/catkin_ws/src/your_pkg/mpc_ctrl/scripts/opt_vis.py # 优化结果分析可视化
+
+## 关键参数介绍
+1. controller_param.yaml主要负责轨迹生成
+   ```bash
+   real_world_flag: False # Set to true if you are running on a real-world drone, false for simulation.
+   odom_topic: /mavros/local_position/odom # your odom topic
+   imu_topic: /mavros/imu/data # your imu topic, hz > 100Hz
+   target_topic: /planning/pos_cmd # target traj topic
+   traj_mode: 0 # 0: fixed position control; 1: circle control
+   attitude_target_topic: /mavros/setpoint_raw/attitude
+   position_target_topic: /mavros/setpoint_raw/local
+   save_path: ~/experiment/mpc_ctrl_ws/src/mpc_ctrl/scripts/mpc_tracking_data.csv
