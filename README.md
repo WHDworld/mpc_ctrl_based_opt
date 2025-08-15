@@ -68,3 +68,17 @@
    catkin_make
    source devel/setup.bash
 
+## 运行核心功能(仿真)
+1. 启动您的px4仿真
+   ```bash
+   roslaunch px4 indoor1.launch
+2. 启动控制器
+   ```bash
+   roslaunch mpc_ctrl run_ctrl.launch
+3. 启动轨迹生成器
+   ```bash
+   roslaunch mpc_ctrl pub_cmd.launch
+3. mpc控制效果可视化脚本
+   ```bash
+   python3 ~/catkin_ws/src/your_pkg/mpc_ctrl/scripts/controller_vis.py  # 轨迹跟踪结果分析可视化
+   python3 ~/catkin_ws/src/your_pkg/mpc_ctrl/scripts/opt_vis.py # 优化结果分析可视化
